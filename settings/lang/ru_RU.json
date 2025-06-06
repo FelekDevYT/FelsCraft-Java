@@ -15,5 +15,7 @@
   "single_player_selection.open_world_button": "Открыть мир",
   "single_player_selection.new_world_button": "Новый мир",
 
-  "world_old_version": "Слишком старая версия игры"
+  "world_old_version": "Слишком старая версия мира",
+  "world_new_version": "Слишком новая версия мира",
+  "world_load_error": "Ошибка при чтении мира"
 }

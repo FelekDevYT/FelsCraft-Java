@@ -30,6 +30,9 @@ public class KeyListener implements java.awt.event.KeyListener {
             case KeyEvent.VK_F1 -> {
                 LevelSO.saveLevel("level");
             }
+            case KeyEvent.VK_F2 -> {
+                LevelSO.loadLevel("level");
+            }
         }
     }
 

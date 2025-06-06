@@ -15,5 +15,7 @@
   "single_player_selection.open_world_button": "Open world",
   "single_player_selection.new_world_button": "New world",
 
-  "world_old_version": "Old version of world"
+  "world_old_version": "Very old version of world",
+  "world_new_version": "Very new version of world",
+  "world_load_error": "External error while loading world"
 }

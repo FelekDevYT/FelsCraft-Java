@@ -4,6 +4,7 @@ import me.felek.game.Game;
 import me.felek.game.World;
 import me.felek.game.lang.LangHandler;
 import me.felek.game.utils.JSONParser;
+import me.felek.game.utils.VersionUtil;
 
 import javax.swing.*;
 import java.io.File;
@@ -35,7 +36,7 @@ public class SingleplayerWorldSelection {
 
         JButton openWorld = getOpenJButton(worlds, frame);
 
-        JButton newWorld = new JButton(LangHandler.getTranslation("single_player_selection.open_world_button"));
+        JButton newWorld = new JButton(LangHandler.getTranslation("single_player_selection.new_world_button"));
         newWorld.setBounds(225, 375, 210, 80);
 
         frame.add(worlds);
@@ -47,7 +48,7 @@ public class SingleplayerWorldSelection {
     }
 
     private static JButton getOpenJButton(JComboBox<String> worlds, JFrame frame) {
-        JButton openWorld = new JButton(LangHandler.getTranslation("single_player_selection.new_world_button"));
+        JButton openWorld = new JButton(LangHandler.getTranslation("single_player_selection.open_world_button"));
         openWorld.setBounds(10, 375, 210, 80);
         openWorld.addActionListener((e) -> {
             Game.worldName = worlds.getSelectedItem().toString();
@@ -57,7 +58,18 @@ public class SingleplayerWorldSelection {
                 throw new RuntimeException(ex);
             }
             if(!Game.worldVersion.equals(World.WORLD_VERSION)){
-                JOptionPane.showMessageDialog(frame, LangHandler.getTranslation("world_old_version"), Game.FULL_NAME, JOptionPane.ERROR_MESSAGE);
+                switch (VersionUtil.compareVersion(Game.worldVersion)){
+                    case 0 ->{// old
+                        JOptionPane.showMessageDialog(frame, LangHandler.getTranslation("world_old_version"), Game.FULL_NAME, JOptionPane.ERROR_MESSAGE);
+                    }
+                    case 2 ->{//new
+                        JOptionPane.showMessageDialog(frame, LangHandler.getTranslation("world_new_version"), Game.FULL_NAME, JOptionPane.ERROR_MESSAGE);
+                    }
+                    case -1 ->{//error while loading
+                        JOptionPane.showMessageDialog(frame, LangHandler.getTranslation("world_old_version"), Game.FULL_NAME, JOptionPane.ERROR_MESSAGE);
+                    }
+                }
+                JOptionPane.showMessageDialog(frame, LangHandler.getTranslation("world_load_error"), Game.FULL_NAME, JOptionPane.ERROR_MESSAGE);
                 return;
             }
 
