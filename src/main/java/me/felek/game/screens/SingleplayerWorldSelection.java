@@ -28,7 +28,7 @@ public class SingleplayerWorldSelection {
             worlds.addItem(obj);
         }
 
-        JButton back = new JButton(LangHandler.getTranslation("single_player_selection.back_button"));
+        JButton back = new JButton(LangHandler.getTranslation("back_button"));
         back.setBounds(10, 5, 80, 70);
         back.addActionListener(e -> {
             new MainMenu();
@@ -39,6 +39,10 @@ public class SingleplayerWorldSelection {
 
         JButton newWorld = new JButton(LangHandler.getTranslation("single_player_selection.new_world_button"));
         newWorld.setBounds(225, 375, 210, 80);
+        newWorld.addActionListener(e -> {
+           new NewWorldScreen();
+            frame.dispose();
+        });
 
         frame.add(worlds);
         frame.add(openWorld);

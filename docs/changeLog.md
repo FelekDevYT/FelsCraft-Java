@@ -13,3 +13,5 @@
 > - 0.7Dt
 
 ## Versions
+- 0.1A - added changelog, opens level on world open
+- 0.1B - added new world creation
