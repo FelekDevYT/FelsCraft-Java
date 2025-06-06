@@ -4,12 +4,15 @@ import me.felek.game.Game;
 import me.felek.game.lang.LangHandler;
 import me.felek.game.lang.Language;
 import me.felek.game.screens.MainMenu;
-import me.felek.game.screens.SettingScreen;
 import me.felek.lib.logUtils.LogLevel;
 import me.felek.lib.logUtils.Logger;
 
 import javax.swing.*;
 import java.awt.*;
+
+//TODO CHANGE WORLD STRUCTURE(Add player info in saves)
+//TODO ADDING BACKGROUND TO ALL MENUS
+//TODO ADD MORE LANGUAGES(Spanish, french, dutch, etc.)
 
 public class Main extends JPanel{
     public static final JFrame frame = new JFrame();
