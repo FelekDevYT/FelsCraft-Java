@@ -1,5 +1,8 @@
 package me.felek.game;
 
+import me.felek.lib.logUtils.LogLevel;
+import me.felek.lib.logUtils.Logger;
+
 import java.io.*;
 import java.nio.file.Files;
 import java.nio.file.Paths;
@@ -11,6 +14,7 @@ Signature of level(version linked to world version):
  */
 public class LevelSO {
     public static void saveLevel(String level) {
+        Logger.log(LogLevel.INFO, "Saving level: " + String.format("worlds/%s/%s.fsw", Game.worldName, level));
         try (BufferedWriter bw = Files.newBufferedWriter(Paths.get(String.format("worlds/%s/%s.fsw", Game.worldName, level)))) {
             for (int x = 0; x < Game.GAME_WIDTH; x++) {
                 for (int y = 0; y < Game.GAME_HEIGHT; y++) {
@@ -21,9 +25,12 @@ public class LevelSO {
         } catch (IOException e) {
             e.printStackTrace();
         }
+
+        Logger.log(LogLevel.OK, "Level saved.");
     }
 
     public static void loadLevel(String level) {
+        Logger.log(LogLevel.INFO, "Loading level: " + String.format("worlds/%s/%s.fsw", Game.worldName, level));
         try {
             List<String> lines = Files.readAllLines(Paths.get(String.format("worlds/%s/%s.fsw", Game.worldName, level)));
 
@@ -44,5 +51,6 @@ public class LevelSO {
         }catch (IOException e) {
             e.printStackTrace();
         }
+        Logger.log(LogLevel.OK, "Level loaded.");
     }
 }

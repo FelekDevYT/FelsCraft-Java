@@ -1,6 +1,7 @@
 package me.felek.game.screens;
 
 import me.felek.game.Game;
+import me.felek.game.LevelSO;
 import me.felek.game.World;
 import me.felek.game.lang.LangHandler;
 import me.felek.game.utils.JSONParser;
