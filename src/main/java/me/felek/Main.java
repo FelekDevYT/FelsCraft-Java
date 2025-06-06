@@ -5,6 +5,8 @@ import me.felek.game.lang.LangHandler;
 import me.felek.game.lang.Language;
 import me.felek.game.screens.MainMenu;
 import me.felek.game.screens.SettingScreen;
+import me.felek.lib.logUtils.LogLevel;
+import me.felek.lib.logUtils.Logger;
 
 import javax.swing.*;
 import java.awt.*;
@@ -17,7 +19,9 @@ public class Main extends JPanel{
     }
 
     public static void main(String[] args) {
+        Logger.log(LogLevel.INFO, "Setting up language.");
         LangHandler.loadLanguage(Language.en_US);
+        Logger.log(LogLevel.OK, "Language loaded.");
         new MainMenu();
         //new SettingScreen();
     }

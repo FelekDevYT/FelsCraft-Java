@@ -4,6 +4,8 @@ import me.felek.game.Game;
 import me.felek.game.lang.LangHandler;
 import me.felek.game.lang.Language;
 import me.felek.game.utils.JSONParser;
+import me.felek.lib.logUtils.LogLevel;
+import me.felek.lib.logUtils.Logger;
 
 import javax.swing.*;
 import java.awt.*;
@@ -15,6 +17,7 @@ import java.util.Objects;
 
 public class SettingScreen {
     public SettingScreen() {
+        Logger.log(LogLevel.INFO, "Opening GUI.");
         JFrame frame = new JFrame();;
         frame.setTitle(Game.FULL_NAME);
         frame.setSize(800, 500);
@@ -49,6 +52,7 @@ public class SettingScreen {
         frame.add(applyButton);
 
         frame.setVisible(true);
+        Logger.log(LogLevel.OK, "GUI opened, menu has been started.");
     }
 
     private static JButton getApplyButton(JComboBox<String> languageComboBox, JFrame frame) {
@@ -67,7 +71,8 @@ public class SettingScreen {
                     throw new RuntimeException(ex);
                 }
             }
-
+            Logger.log(LogLevel.INFO, "Applying language change.");
+            Logger.log(LogLevel.INFO, "Moving screen to main menu.");
             new MainMenu();
             frame.dispose();
         });

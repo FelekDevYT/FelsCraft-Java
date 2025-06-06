@@ -6,6 +6,8 @@ import me.felek.game.World;
 import me.felek.game.lang.LangHandler;
 import me.felek.game.utils.JSONParser;
 import me.felek.game.utils.VersionUtil;
+import me.felek.lib.logUtils.LogLevel;
+import me.felek.lib.logUtils.Logger;
 
 import javax.swing.*;
 import java.io.File;
@@ -16,21 +18,25 @@ import java.util.Objects;
 
 public class SingleplayerWorldSelection {
     public  SingleplayerWorldSelection() {
+        Logger.log(LogLevel.INFO, "Opening GUI.");
         JFrame frame = new JFrame();;
         frame.setTitle(Game.FULL_NAME);
         frame.setSize(800, 500);
         frame.setResizable(false);
         frame.setLayout(null);
 
+        Logger.log(LogLevel.INFO, "Loading worlds to list.");
         JComboBox<String> worlds = new JComboBox<>();
         worlds.setBounds(105, 10, 330, 65);
         for(String obj : Objects.requireNonNull(new File("worlds/").list())){
             worlds.addItem(obj);
         }
+        Logger.log(LogLevel.OK, "Levels are loaded.");
 
         JButton back = new JButton(LangHandler.getTranslation("back_button"));
         back.setBounds(10, 5, 80, 70);
         back.addActionListener(e -> {
+            Logger.log(LogLevel.INFO, "Moving screen to main menu.");
             new MainMenu();
             frame.dispose();
         });
@@ -40,7 +46,8 @@ public class SingleplayerWorldSelection {
         JButton newWorld = new JButton(LangHandler.getTranslation("single_player_selection.new_world_button"));
         newWorld.setBounds(225, 375, 210, 80);
         newWorld.addActionListener(e -> {
-           new NewWorldScreen();
+            Logger.log(LogLevel.INFO, "Moving screen to world creation screen.");
+            new NewWorldScreen();
             frame.dispose();
         });
 
@@ -50,6 +57,7 @@ public class SingleplayerWorldSelection {
         frame.add(back);
 
         frame.setVisible(true);
+        Logger.log(LogLevel.OK, "GUI opened, menu has been started.");
     }
 
     private static JButton getOpenJButton(JComboBox<String> worlds, JFrame frame) {
@@ -78,6 +86,8 @@ public class SingleplayerWorldSelection {
                 return;
             }
 
+            Logger.log(LogLevel.INFO, "Loading world...");
+            Logger.log(LogLevel.INFO, "Moving screen to world.");
             new GameScreen();
             frame.dispose();
         });
