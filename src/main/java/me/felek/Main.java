@@ -22,7 +22,6 @@ public class Main extends JPanel{
         LangHandler.loadLanguage(Language.en_US);
         Logger.log(LogLevel.OK, "Language loaded.");
         new MainMenu();
-        //new SettingScreen();
     }
 
     public void paint(Graphics g){

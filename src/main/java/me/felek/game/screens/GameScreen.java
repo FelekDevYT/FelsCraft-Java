@@ -8,6 +8,7 @@ import me.felek.game.LevelSO;
 import me.felek.game.lang.LangHandler;
 import me.felek.game.lang.Language;
 import me.felek.game.listeners.KeyListener;
+import me.felek.game.listeners.MouseListener;
 import me.felek.lib.logUtils.LogLevel;
 import me.felek.lib.logUtils.Logger;
 
@@ -32,6 +33,7 @@ public class GameScreen{
         frame.setResizable(false);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.addKeyListener(new KeyListener());
+        frame.addMouseListener(new MouseListener());
         Logger.log(LogLevel.OK, "GUI opened, game has been started.");
 
         frame.setVisible(true);

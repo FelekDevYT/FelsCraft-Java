@@ -1,0 +1,40 @@
+package me.felek.game.listeners;
+
+import me.felek.game.Block;
+import me.felek.game.BlockType;
+import me.felek.game.Game;
+
+import java.awt.event.MouseEvent;
+
+public class MouseListener implements java.awt.event.MouseListener {
+    @Override
+    public void mousePressed(MouseEvent e) {
+        int x = e.getX();
+        int y = e.getY() - 14;
+
+        int cubeX = x / Game.BLOCK_SIZE;
+        int cubeY = y / Game.BLOCK_SIZE - 1;
+
+        BlockType type;
+
+        if(e.getButton() == MouseEvent.BUTTON1) {
+            type = BlockType.STONE;
+        }else{
+            type = BlockType.SKY;
+        }
+
+        Game.world.blocks[cubeX][cubeY] = new Block(cubeX * Game.BLOCK_SIZE, cubeY * Game.BLOCK_SIZE, type);
+    }
+
+    @Override
+    public void mouseClicked(MouseEvent e) {}
+
+    @Override
+    public void mouseReleased(MouseEvent e) {}
+
+    @Override
+    public void mouseEntered(MouseEvent e) {}
+
+    @Override
+    public void mouseExited(MouseEvent e) {}
+}

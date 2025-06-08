@@ -13,7 +13,8 @@
 > - 0.7Dt
 
 ## Versions
-- 0.2Ct - player in world signature, added [TODO](TODO.md) list
+- 0.2D - add mouseHandler for breaking/setting blocks(today without inventory, but OK)
+- 0.2Ct - player in world signature, added [TODO](TODO.md) list, world version 0.2
 - 0.2Bt - returns to old block system, become new has a lot of problems
 - 0.2Atf - changed Block.java structure + fixes 
 - 0.1Ct - test version(without any additions)
