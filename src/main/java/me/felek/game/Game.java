@@ -24,7 +24,7 @@ public class Game {
     public static final int GAME_HEIGHT = Game.SCREEN_HEIGHT /Game.BLOCK_SIZE;
     public static final int SCREEN_WIDTH = 1280;//it is count of screen size
     public static final int SCREEN_HEIGHT = 720;
-    public static final int FPS = 30;
+    public static final int FPS = 10;
     public static final Process[] processes = new Process[1];
 
     // GENERATION VARS

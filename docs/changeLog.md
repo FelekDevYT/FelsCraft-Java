@@ -13,7 +13,8 @@
 > - 0.7Dt
 
 ## Versions
-- 0.2At - changed Block.java structure + fixes 
+- 0.2Bt - returns to old block system, become new has a lot of problems
+- 0.2Atf - changed Block.java structure + fixes 
 - 0.1Ct - test version(without any additions)
 - 0.1C - added logging system to menus(without game logging)
 - 0.1B - added new world creation
