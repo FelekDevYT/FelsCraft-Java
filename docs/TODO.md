@@ -7,7 +7,7 @@
 - [ ] World
     - [x] Player in world signature(player.json)
     - [ ] Structure generation
-    - [ ] Multi Level worlds
+    - [x] Multi Level worlds
 - [ ] Languages
     - [x] Add support for Russian language
     - [ ] Add support for French, Spanish, Dutch
