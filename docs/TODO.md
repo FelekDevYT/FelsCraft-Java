@@ -2,7 +2,8 @@
 
 ## TODO list for 1.0(can be edited)
 - [ ] Core
-    - [ ] Add blocks break/set using mouse(left and right button)
+    - [x] Add blocks break/set using mouse(left and right button)
+    - [x] Add inventory
 - [ ] World
     - [x] Player in world signature(player.json)
     - [ ] Structure generation

@@ -26,7 +26,10 @@ public class Main extends JPanel{
 
     public void paint(Graphics g){
         super.paintComponents(g);
+
         Game.world.renderWorld(g);
+
+        Game.overlay.draw(g);
 
         g.setColor(Color.WHITE);
         g.setFont(new Font("Arial", Font.BOLD, 15));

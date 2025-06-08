@@ -3,6 +3,7 @@ package me.felek.game.listeners;
 import me.felek.game.Block;
 import me.felek.game.BlockType;
 import me.felek.game.Game;
+import me.felek.game.managers.InventoryManager;
 
 import java.awt.event.MouseEvent;
 
@@ -15,15 +16,13 @@ public class MouseListener implements java.awt.event.MouseListener {
         int cubeX = x / Game.BLOCK_SIZE;
         int cubeY = y / Game.BLOCK_SIZE - 1;
 
-        BlockType type;
+        BlockType type = null;
 
-        if(e.getButton() == MouseEvent.BUTTON1) {
-            type = BlockType.STONE;
-        }else{
+        if(e.getButton() == MouseEvent.BUTTON3) {
             type = BlockType.SKY;
         }
 
-        Game.world.blocks[cubeX][cubeY] = new Block(cubeX * Game.BLOCK_SIZE, cubeY * Game.BLOCK_SIZE, type);
+        Game.world.blocks[cubeX][cubeY] = new Block(cubeX * Game.BLOCK_SIZE, cubeY * Game.BLOCK_SIZE, type == BlockType.SKY?type : InventoryManager.inventory[InventoryManager.current_slot]);
     }
 
     @Override

@@ -9,6 +9,8 @@ import me.felek.game.lang.LangHandler;
 import me.felek.game.lang.Language;
 import me.felek.game.listeners.KeyListener;
 import me.felek.game.listeners.MouseListener;
+import me.felek.game.listeners.MouseWheelListener;
+import me.felek.game.managers.InventoryManager;
 import me.felek.lib.logUtils.LogLevel;
 import me.felek.lib.logUtils.Logger;
 
@@ -25,15 +27,17 @@ public class GameScreen{
         Main m = new Main();
 
         Game.init(m);
+        InventoryManager.init();
 
         Logger.log(LogLevel.INFO, "Opening GUI.");
         frame.getContentPane().add(m);
         frame.setTitle(Game.FULL_NAME);
-        frame.setSize(Game.SCREEN_WIDTH - 3, Game.SCREEN_HEIGHT);
+        frame.setSize(Game.SCREEN_WIDTH - 3, (Game.SCREEN_HEIGHT + Game.INVENTORY_HEIGHT));
         frame.setResizable(false);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.addKeyListener(new KeyListener());
         frame.addMouseListener(new MouseListener());
+        frame.addMouseWheelListener(new MouseWheelListener());
         Logger.log(LogLevel.OK, "GUI opened, game has been started.");
 
         frame.setVisible(true);

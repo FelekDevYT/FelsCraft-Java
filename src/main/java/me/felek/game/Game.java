@@ -2,6 +2,7 @@ package me.felek.game;
 
 import me.felek.Main;
 import me.felek.game.listeners.KeyListener;
+import me.felek.game.overlays.InventoryOverlay;
 import me.felek.game.processes.PhysicsProcess;
 import me.felek.game.processes.Process;
 import me.felek.lib.utils.MathUtils;
@@ -14,7 +15,7 @@ import java.awt.event.ActionListener;
 public class Game {
     // COPYRIGHTS
     public static final String AUTHOR = "FelekDevYT";
-    public static final String VERSION = "0.2";
+    public static final String VERSION = "0.3";
     public static final String NAME = "FelsCraft";
     public static final String FULL_NAME = NAME + " " + VERSION;
 
@@ -26,6 +27,10 @@ public class Game {
     public static final int SCREEN_HEIGHT = 720;
     public static final int FPS = 10;
     public static final Process[] processes = new Process[1];
+
+    //INVENTORY
+    public static final int INVENTORY_HEIGHT = 100;
+    public static final InventoryOverlay overlay = new InventoryOverlay(0, SCREEN_HEIGHT, Color.BLACK);
 
     // GENERATION VARS
     public static final OreLevel ironLevel = new OreLevel(5, 15, new int[]{1, 11, 1, 11});
