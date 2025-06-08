@@ -39,6 +39,11 @@ public class Block {
         graphics.fillRect(x, y, Game.BLOCK_SIZE, Game.BLOCK_SIZE);
         graphics.setColor(Color.BLACK);
         graphics.drawRect(x, y, Game.BLOCK_SIZE, Game.BLOCK_SIZE);
+        /*
+        graphics.fillRect((x * Game.BLOCK_SIZE), (y * Game.BLOCK_SIZE), Game.BLOCK_SIZE, Game.BLOCK_SIZE);
+        graphics.setColor(Color.BLACK);
+        graphics.drawRect((x * Game.BLOCK_SIZE), (y * Game.BLOCK_SIZE), Game.BLOCK_SIZE, Game.BLOCK_SIZE);
+         */
         graphics.setColor(prev);
     }
 }

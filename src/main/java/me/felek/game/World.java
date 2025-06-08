@@ -35,17 +35,17 @@ public class World {
         for(int x = 0; x < GAME_WIDTH; x++){
             for(int y = 0; y < GAME_HEIGHT; y++){
                 if(coalLevel.isShouldGenerate(Utility.reverseIndex(y))){
-                    blocks[x][y] = new Block((BLOCK_SIZE * x), (BLOCK_SIZE * y), BlockType.COAL);
+                    blocks[x][y] = new Block(x, y, BlockType.COAL);
                 }else if(ironLevel.isShouldGenerate(Utility.reverseIndex(y))){
-                    blocks[x][y] = new Block((BLOCK_SIZE * x), (BLOCK_SIZE * y), BlockType.IRON);
+                    blocks[x][y] = new Block(x, y, BlockType.IRON);
                 }else if(diamondLevel.isShouldGenerate(Utility.reverseIndex(y))){
-                    blocks[x][y] = new Block((BLOCK_SIZE * x), (BLOCK_SIZE * y), BlockType.DIAMOND);
+                    blocks[x][y] = new Block(x, y, BlockType.DIAMOND);
                 }else if(y < Utility.reverseIndex(heights_level[x])){
-                    blocks[x][y] = new Block((BLOCK_SIZE * x), (BLOCK_SIZE * y), BlockType.SKY);
+                    blocks[x][y] = new Block(x, y, BlockType.SKY);
                 }else if(y < Utility.reverseIndex(heights_level[x] - 2)){
-                    blocks[x][y] = new Block((BLOCK_SIZE * x), (BLOCK_SIZE * y), BlockType.GRASS);
+                    blocks[x][y] = new Block(x, y, BlockType.GRASS);
                 }else{
-                    blocks[x][y] = new Block((BLOCK_SIZE * x), (BLOCK_SIZE * y), BlockType.STONE);
+                    blocks[x][y] = new Block(x, y, BlockType.STONE);
                 }
             }
         }

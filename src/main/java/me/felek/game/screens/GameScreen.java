@@ -3,8 +3,6 @@ package me.felek.game.screens;
 import me.felek.Main;
 import me.felek.game.Game;
 import me.felek.game.LevelSO;
-import me.felek.game.lang.LangHandler;
-import me.felek.game.lang.Language;
 import me.felek.game.listeners.KeyListener;
 import me.felek.lib.logUtils.LogLevel;
 import me.felek.lib.logUtils.Logger;
