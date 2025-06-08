@@ -1,6 +1,8 @@
 package me.felek.game.screens;
 
 import me.felek.Main;
+import me.felek.game.Block;
+import me.felek.game.BlockType;
 import me.felek.game.Game;
 import me.felek.game.LevelSO;
 import me.felek.game.lang.LangHandler;

@@ -12,4 +12,9 @@ public class JSONParser {
         JsonObject obj = Json.createReader(new StringReader(json)).readObject();
         return obj.getString(key);
     }
+
+    public static int parseInt(String json, String key) {
+        JsonObject obj = Json.createReader(new StringReader(json)).readObject();
+        return obj.getInt(key);
+    }
 }

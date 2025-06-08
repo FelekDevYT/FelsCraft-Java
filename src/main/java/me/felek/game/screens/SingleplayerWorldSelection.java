@@ -2,6 +2,7 @@ package me.felek.game.screens;
 
 import me.felek.game.Game;
 import me.felek.game.LevelSO;
+import me.felek.game.Player;
 import me.felek.game.World;
 import me.felek.game.lang.LangHandler;
 import me.felek.game.utils.JSONParser;
@@ -66,7 +67,10 @@ public class SingleplayerWorldSelection {
         openWorld.addActionListener((e) -> {
             Game.worldName = worlds.getSelectedItem().toString();
             try {
-                Game.worldVersion = JSONParser.parseString(Files.readString(Path.of("worlds/" + Game.worldName + "/info.json")), "world_version");
+                String json = Files.readString(Path.of("worlds/" + Game.worldName + "/info.json"));
+                Game.worldVersion = JSONParser.parseString(json, "world_version");
+                json = Files.readString(Path.of("worlds/" + Game.worldName + "/player.json"));
+                Game.player.moveTo(JSONParser.parseInt(json, "posX"), JSONParser.parseInt(json, "posY"));
             } catch (IOException ex) {
                 throw new RuntimeException(ex);
             }

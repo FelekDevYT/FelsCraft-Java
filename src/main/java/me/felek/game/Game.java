@@ -34,7 +34,7 @@ public class Game {
     public static World world = new World();
 
     //ANOTHER
-    public static final Player player = new Player(1, 1);
+    public static final Player player = new Player(0, 0);
     public static Main INSTANCE;
     public static Timer gameUpdater;
 

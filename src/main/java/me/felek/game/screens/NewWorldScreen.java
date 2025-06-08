@@ -62,9 +62,20 @@ public class NewWorldScreen {
                 }catch (IOException exc){
                     throw new RuntimeException(exc);
                 }
+
+                try(BufferedWriter bw = new BufferedWriter(new FileWriter("worlds/" + levelNameField.getText() + "/player.json"))){
+                    bw.write("{\n");
+                    bw.write("  \"posX\": 1,\n");
+                    bw.write("  \"posY\": 1\n");
+                    bw.write("}");
+                }catch (IOException exc){
+                    exc.printStackTrace();
+                }
             } catch (IOException ex) {
                 throw new RuntimeException(ex);
             }
+            Game.player.moveTo(1, 1);
+
             Game.worldName = levelNameField.getText();
             Game.world.generateBlocks();
             LevelSO.saveLevel("level");
