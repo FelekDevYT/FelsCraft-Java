@@ -13,6 +13,7 @@
 > - 0.7Dt
 
 ## Versions
+- 0.4Bt - changed [TODO](TODO.md) list
 - 0.4At - Multi-level world, world version - 0.3, deleted F2 key because level opens and saves automatically
 - 0.3At - added full-works inventory with full-works selection, slot changes
 - 0.2D - add mouseHandler for breaking/setting blocks(today without inventory, but OK)
