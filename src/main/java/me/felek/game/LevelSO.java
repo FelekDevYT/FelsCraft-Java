@@ -14,8 +14,8 @@ Signature of level(version linked to world version):
  */
 public class LevelSO {
     public static void saveLevel(String level) {
-        Logger.log(LogLevel.INFO, "Saving level: " + String.format("worlds/%s/%s.fsw", Game.worldName, level));
-        try (BufferedWriter bw = Files.newBufferedWriter(Paths.get(String.format("worlds/%s/%s.fsw", Game.worldName, level)))) {
+        Logger.log(LogLevel.INFO, "Saving level: " + String.format("worlds/%s/data/%s.fsw", Game.worldName, level));
+        try (BufferedWriter bw = Files.newBufferedWriter(Paths.get(String.format("worlds/%s/data/%s.fsw", Game.worldName, level)))) {
             for (int x = 0; x < Game.GAME_WIDTH; x++) {
                 for (int y = 0; y < Game.GAME_HEIGHT; y++) {
                     Block b = Game.world.getBlockAt(x, y);
@@ -30,9 +30,9 @@ public class LevelSO {
     }
 
     public static void loadLevel(String level) {
-        Logger.log(LogLevel.INFO, "Loading level: " + String.format("worlds/%s/%s.fsw", Game.worldName, level));
+        Logger.log(LogLevel.INFO, "Loading level: " + String.format("worlds/%s/data/%s.fsw", Game.worldName, level));
         try {
-            List<String> lines = Files.readAllLines(Paths.get(String.format("worlds/%s/%s.fsw", Game.worldName, level)));
+            List<String> lines = Files.readAllLines(Paths.get(String.format("worlds/%s/data/%s.fsw", Game.worldName, level)));
 
             for (String line : lines) {
                 String[] split = line.split(" ");

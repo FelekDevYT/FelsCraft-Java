@@ -28,11 +28,8 @@ public class KeyListener implements java.awt.event.KeyListener {
                 Game.player.move(0, -1);
             }
             case KeyEvent.VK_F1 -> {
-                LevelSO.saveLevel("level");
-            }
-            case KeyEvent.VK_F2 -> {
-                LevelSO.loadLevel("level");
-            }
+                LevelSO.saveLevel("level0");
+            }//Removed F2 openLevel because I want
         }
     }
 

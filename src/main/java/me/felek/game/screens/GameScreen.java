@@ -21,7 +21,7 @@ public class GameScreen{
 
     public GameScreen() {
         Logger.log(LogLevel.INFO, "Opening world.");
-        LevelSO.loadLevel("level");
+        LevelSO.loadLevel("level0");
         Logger.log(LogLevel.OK, "World successfully loaded.");
 
         Main m = new Main();

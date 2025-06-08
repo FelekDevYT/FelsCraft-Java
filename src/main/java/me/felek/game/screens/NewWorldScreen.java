@@ -52,6 +52,7 @@ public class NewWorldScreen {
         createGameButton.addActionListener(e -> {
             try {
                 new File("worlds/" + levelNameField.getText() + "/").mkdir();
+                new File("worlds/" + levelNameField.getText() + "/data/").mkdir();
                 new File("worlds/" + levelNameField.getText() + "/info.json").createNewFile();
 
                 try(BufferedWriter bw = new BufferedWriter(new FileWriter("worlds/" + levelNameField.getText() + "/info.json"))){
@@ -78,7 +79,7 @@ public class NewWorldScreen {
 
             Game.worldName = levelNameField.getText();
             Game.world.generateBlocks();
-            LevelSO.saveLevel("level");
+            LevelSO.saveLevel("level0");
             new GameScreen();
 
             frame.dispose();
