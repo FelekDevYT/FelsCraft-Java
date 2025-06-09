@@ -13,6 +13,7 @@
 > - 0.7Dt
 
 ## Versions
+- 0.5t - smooth terrain, added structures(trees), new blocks, a lot of new content, world version - 0.5
 - 0.4C - changed ore generation, upped terrain(15, 20 ->  20, 25), world version - 0.4
 - 0.4Bt - changed [TODO](TODO.md) list
 - 0.4At - Multi-level world, world version - 0.3, deleted F2 key because level opens and saves automatically

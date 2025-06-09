@@ -8,7 +8,7 @@
     - [x] Add inventory
 - [ ] World
     - [x] Player in world signature(player.json)
-    - [ ] Structure generation
+    - [x] Structure generation
     - [x] Multi Level worlds
 - [ ] Languages
     - [x] Add support for Russian language

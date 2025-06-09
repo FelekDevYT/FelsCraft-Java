@@ -11,6 +11,8 @@ import me.felek.game.listeners.KeyListener;
 import me.felek.game.listeners.MouseListener;
 import me.felek.game.listeners.MouseWheelListener;
 import me.felek.game.managers.InventoryManager;
+import me.felek.game.worldgen.Grid;
+import me.felek.game.worldgen.TreeStructure;
 import me.felek.lib.logUtils.LogLevel;
 import me.felek.lib.logUtils.Logger;
 
