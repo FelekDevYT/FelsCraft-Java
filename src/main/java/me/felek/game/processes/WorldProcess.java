@@ -1,6 +1,5 @@
 package me.felek.game.processes;
 
-import me.felek.game.BlockType;
 import me.felek.game.Game;
 import me.felek.game.LevelSO;
 import me.felek.game.managers.LevelManager;

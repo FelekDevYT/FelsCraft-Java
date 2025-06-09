@@ -7,7 +7,7 @@ import java.awt.*;
 import static me.felek.game.Game.*;
 
 public class World {
-    public static final String WORLD_VERSION = "0.3";
+    public static final String WORLD_VERSION = "0.4";
 
     public Block[][] blocks = new Block[GAME_WIDTH][GAME_HEIGHT];
     public int[] heights_level = new int[GAME_WIDTH];
@@ -22,11 +22,11 @@ public class World {
 
     public void generateBlocks(){
         for(int x = 0; x < GAME_WIDTH; x++){
-            heights_level[x] = MathUtils.random(15, 20);
+            heights_level[x] = MathUtils.random(20, 25);
             if(x != 0){
                 if(Math.abs(heights_level[x] - heights_level[x-1]) > 2){
                     while(Math.abs(heights_level[x] - heights_level[x-1]) > 2){
-                        heights_level[x] = MathUtils.random(15, 15 + Math.abs(heights_level[x] - heights_level[x-1]));
+                        heights_level[x] = MathUtils.random(20, 20 + Math.abs(heights_level[x] - heights_level[x-1]));
                     }
                 }
             }

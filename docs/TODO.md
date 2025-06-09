@@ -1,6 +1,8 @@
 # FelsCraft-Java TODO list
 
 ## TODO list for 1.0(can be edited)
+- [ ] Basic structures
+    - [ ] Change block structure for "modding"
 - [ ] Core
     - [x] Add blocks break/set using mouse(left and right button)
     - [x] Add inventory

@@ -34,9 +34,9 @@ public class Game {
     public static final InventoryOverlay overlay = new InventoryOverlay(0, SCREEN_HEIGHT, Color.BLACK);
 
     // GENERATION VARS
-    public static final OreLevel ironLevel = new OreLevel(5, 15, new int[]{1, 11, 1, 11});
-    public static final OreLevel coalLevel = new OreLevel(5, 15, new int[]{1, 10, 1, 10});
-    public static final OreLevel diamondLevel = new OreLevel(1, 7, new int[]{1, 15, 1, 15});
+    public static final OreLevel ironLevel = new OreLevel(5, 17, new int[]{1, 14, 5, 14});
+    public static final OreLevel coalLevel = new OreLevel(7, 20, new int[]{1, 10, 1, 10});
+    public static final OreLevel diamondLevel = new OreLevel(1, 10, new int[]{1, 15, 1, 15});
     public static World world = new World();
 
     //ANOTHER
