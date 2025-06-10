@@ -1,10 +1,13 @@
 package me.felek.game;
 
+import me.felek.game.managers.LevelManager;
+import me.felek.game.utils.JSONParser;
 import me.felek.lib.logUtils.LogLevel;
 import me.felek.lib.logUtils.Logger;
 
 import java.io.*;
 import java.nio.file.Files;
+import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.List;
 
@@ -24,6 +27,16 @@ public class LevelSO {
             }
         } catch (IOException e) {
             e.printStackTrace();
+        }
+
+        try(BufferedWriter bw = Files.newBufferedWriter(Paths.get(String.format("worlds/%s/player.json", Game.worldName)))){
+            bw.write("{\n");
+            bw.write("  \"level\": " + LevelManager.levelPointer + ",\n");
+            bw.write("  \"posX\": " + Game.player.getX() + ",\n");
+            bw.write("  \"posY\": " + Game.player.getY() + "\n");
+            bw.write("}");
+        }catch (IOException exc){
+            exc.printStackTrace();
         }
 
         Logger.log(LogLevel.OK, "Level saved.");
@@ -51,6 +64,16 @@ public class LevelSO {
         }catch (IOException e) {
             e.printStackTrace();
         }
+
+        try{
+           String text = Files.readString(Path.of(String.format("worlds/%s/player.json", Game.worldName)));
+
+           Game.player.moveTo(JSONParser.parseInt(text, "posX"), JSONParser.parseInt(text, "posY"));
+           LevelManager.levelPointer = JSONParser.parseInt(text, "level");
+        }catch (IOException exc){
+            exc.printStackTrace();
+        }
+
         Logger.log(LogLevel.OK, "Level loaded.");
     }
 }

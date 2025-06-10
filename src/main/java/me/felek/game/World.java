@@ -9,10 +9,20 @@ import java.awt.*;
 import static me.felek.game.Game.*;
 
 public class World {
-    public static final String WORLD_VERSION = "0.5";
+    public static final String WORLD_VERSION = "0.6";
 
     public Block[][] blocks = new Block[GAME_WIDTH][GAME_HEIGHT];
     public int[] heights_level = new int[GAME_WIDTH];
+
+    public int getMaxY(int x){
+        for(int y = 0; y < GAME_HEIGHT; y++){
+            if(blocks[x][y].getType() != BlockType.SKY){
+                return y - 1;
+            }
+        }
+
+        return -1;
+    }
 
     public Block getBlockAt(int x, int y) {
         return blocks[x][y];
