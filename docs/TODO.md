@@ -6,6 +6,7 @@
 - [ ] Core
     - [x] Add blocks break/set using mouse(left and right button)
     - [x] Add inventory
+    - [x] On load new level player spawns on ground(not on air)
 - [ ] World
     - [x] Player in world signature(player.json)
     - [x] Structure generation

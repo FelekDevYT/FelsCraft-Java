@@ -30,12 +30,20 @@ public class WorldProcess implements Process {
             if(new File(String.format("worlds/%s/data/%s.fsw", Game.worldName, ("level" + String.valueOf(Game.player.getX() < 0?LevelManager.levelPointer - 1 : LevelManager.levelPointer + 1)))).exists()){
                 incOrDecLevel();
                 LevelSO.loadLevel("level" + LevelManager.levelPointer);
-                Game.player.moveTo(1, 1);
+
+                if(Game.player.getX() < 0)
+                    Game.player.moveTo(Game.GAME_WIDTH - 3, Game.world.getMaxY(1));
+                else
+                    Game.player.moveTo(1, Game.world.getMaxY(1));
             }else{
                 incOrDecLevel();
                 Game.world.generateBlocks();
                 LevelSO.saveLevel("level" + LevelManager.levelPointer);
-                Game.player.moveTo(1, 1);
+
+                if(Game.player.getX() < 0)
+                    Game.player.moveTo(Game.GAME_WIDTH - 3, Game.world.getMaxY(1));
+                else
+                    Game.player.moveTo(1, Game.world.getMaxY(1));
             }
 
             Logger.log(LogLevel.INFO, "Moving to level " + LevelManager.levelPointer);
