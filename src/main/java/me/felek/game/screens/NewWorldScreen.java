@@ -19,7 +19,10 @@ public class NewWorldScreen {
         frame.setSize(800, 500);
         frame.setResizable(false);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.setLayout(null);
+
+
+        DefaultBackgroundPanel panel = new DefaultBackgroundPanel();
+        panel.setLayout(null);
 
         JButton back = new JButton(LangHandler.getTranslation("back_button"));
         back.setBounds(10, 5, 80, 70);
@@ -37,10 +40,12 @@ public class NewWorldScreen {
 
         JButton createGameButton = getCreateNewGameButton(levelNameField, frame);
 
-        frame.add(back);
-        frame.add(levelNameLabel);
-        frame.add(levelNameField);
-        frame.add(createGameButton);
+        panel.add(back);
+        panel.add(levelNameLabel);
+        panel.add(levelNameField);
+        panel.add(createGameButton);
+
+        frame.add(panel);
 
         frame.setVisible(true);
     }

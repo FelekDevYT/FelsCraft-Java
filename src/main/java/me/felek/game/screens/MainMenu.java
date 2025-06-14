@@ -7,7 +7,7 @@ import me.felek.lib.logUtils.Logger;
 
 import javax.swing.*;
 
-public class MainMenu {
+public class MainMenu{
     public MainMenu(){
         Logger.log(LogLevel.INFO, "Opening GUI.");
         JFrame frame = new JFrame();;
@@ -15,7 +15,9 @@ public class MainMenu {
         frame.setSize(800, 500);
         frame.setResizable(false);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.setLayout(null);
+
+        DefaultBackgroundPanel panel = new DefaultBackgroundPanel();
+        panel.setLayout(null);
 
         JButton singlePlayerButton = new JButton(LangHandler.getTranslation("main_menu.single_player_button"));
         singlePlayerButton.setBounds(250, 100, 250, 50);
@@ -43,12 +45,15 @@ public class MainMenu {
             System.exit(10);
         });
 
-        frame.add(singlePlayerButton);
-        frame.add(settingsButton);
-        frame.add(aboutButton);
-        frame.add(quitButton);
+        panel.add(singlePlayerButton);
+        panel.add(settingsButton);
+        panel.add(aboutButton);
+        panel.add(quitButton);
         Logger.log(LogLevel.OK, "GUI opened, menu has been started.");
+
+        frame.add(panel);
 
         frame.setVisible(true);
     }
+
 }

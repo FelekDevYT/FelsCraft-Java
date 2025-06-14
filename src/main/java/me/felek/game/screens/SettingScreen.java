@@ -23,7 +23,9 @@ public class SettingScreen {
         frame.setSize(800, 500);
         frame.setResizable(false);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.setLayout(null);
+
+        DefaultBackgroundPanel panel = new DefaultBackgroundPanel();
+        panel.setLayout(null);
 
         JLabel settingLabel = new JLabel(LangHandler.getTranslation( "settings.settings_label"));
         settingLabel.setFont(new Font("Segoe UI", Font.PLAIN, 48));
@@ -46,10 +48,12 @@ public class SettingScreen {
 
         JButton applyButton = getApplyButton(languageComboBox, frame);
 
-        frame.add(settingLabel);
-        frame.add(languageLabel);
-        frame.add(languageComboBox);
-        frame.add(applyButton);
+        panel.add(settingLabel);
+        panel.add(languageLabel);
+        panel.add(languageComboBox);
+        panel.add(applyButton);
+
+        frame.add(panel);
 
         frame.setVisible(true);
         Logger.log(LogLevel.OK, "GUI opened, menu has been started.");

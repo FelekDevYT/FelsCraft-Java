@@ -13,6 +13,7 @@
 > - 0.7Dt
 
 ## Versions
+- 0.5E - changed menus style, add background color for every menu, added somethink to [TODO](TODO.md)
 - 0.5D - fix bug(game render 0.4 version, but game version is 0.5)
 - 0.5Cf - On game open, player position going to max real Y(real != AIR), in 2 blocks
 - 0.5B - added getMaxY function, added player coordinates to world signature, world version - 0.6

@@ -24,7 +24,9 @@ public class SingleplayerWorldSelection {
         frame.setTitle(Game.FULL_NAME);
         frame.setSize(800, 500);
         frame.setResizable(false);
-        frame.setLayout(null);
+
+        DefaultBackgroundPanel panel = new DefaultBackgroundPanel();
+        panel.setLayout(null);
 
         Logger.log(LogLevel.INFO, "Loading worlds to list.");
         JComboBox<String> worlds = new JComboBox<>();
@@ -52,10 +54,12 @@ public class SingleplayerWorldSelection {
             frame.dispose();
         });
 
-        frame.add(worlds);
-        frame.add(openWorld);
-        frame.add(newWorld);
-        frame.add(back);
+        panel.add(worlds);
+        panel.add(openWorld);
+        panel.add(newWorld);
+        panel.add(back);
+
+        frame.add(panel);
 
         frame.setVisible(true);
         Logger.log(LogLevel.OK, "GUI opened, menu has been started.");

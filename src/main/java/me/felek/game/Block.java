@@ -5,7 +5,7 @@ import java.awt.*;
 public class Block {
     private int x;
     private int y;
-    private BlockType type;
+    BlockType type;
 
     public Block(int x, int y, BlockType type) {
         this.x = x;
