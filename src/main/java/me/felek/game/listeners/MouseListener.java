@@ -19,7 +19,7 @@ public class MouseListener implements java.awt.event.MouseListener {
 
         BlockType type = null;
 
-        if(e.getButton() == MouseEvent.BUTTON3) {
+        if(e.getButton() == MouseEvent.BUTTON1) {
             type = BlockManager.getBlockTypeAsName("sky");
         }
 

@@ -23,7 +23,7 @@ public class LevelSO {
             for (int x = 0; x < Game.GAME_WIDTH; x++) {
                 for (int y = 0; y < Game.GAME_HEIGHT; y++) {
                     Block b = Game.world.getBlockAt(x, y);
-                    bw.write(String.format("%d %d %s\n", x, y, b.getType()));
+                    bw.write(String.format("%d %d %s\n", x, y, BlockManager.getBlockNameAsBlockType(b.getType())));
                 }
             }
         } catch (IOException e) {

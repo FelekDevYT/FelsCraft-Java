@@ -5,10 +5,8 @@ import me.felek.lib.logUtils.LogLevel;
 import me.felek.lib.logUtils.Logger;
 
 import java.awt.*;
-import java.util.ArrayList;
-import java.util.HashMap;
+import java.util.*;
 import java.util.List;
-import java.util.Map;
 
 public class BlockManager {
     public static Map<String, BlockType> blockTypes;
@@ -26,6 +24,17 @@ public class BlockManager {
         blockTypes.put("log", new BlockType(new Color(99, 61, 31)));
         blockTypes.put("dirt", new BlockType(new Color(59, 39, 23)));
     }
+
+    public static String getBlockNameAsBlockType(BlockType blockType) {
+        Set<String> entries =  blockTypes.keySet();
+        for (String name : entries) {
+            if (blockTypes.get(name).equals(blockType)) {
+                return name;
+            }
+        }
+
+        return "";
+    }
     
     public static BlockType getBlockTypeAsName(String name) {
         name = name.toLowerCase();
@@ -38,6 +47,8 @@ public class BlockManager {
     }
 
     public static void addBlock(String blockName, BlockType blockType) {
+        blockName = blockName.toLowerCase();
+
         if (!blockTypes.containsKey(blockName)) {
             Logger.log(LogLevel.ERROR, "Failed to add new block " + blockName);
             return;
