@@ -1,0 +1,24 @@
+{
+  "this.language": "Русский",
+  "this.system_lang": "ru_RU",
+
+  "main_menu.single_player_button": "Одиночная игра",
+  "main_menu.settings_button": "Настройки",
+  "main_menu.about_button": "О игре",
+  "main_menu.quit_button": "Выйти",
+
+  "settings.settings_label": "Настройки",
+  "settings.language_label": "Язык",
+  "settings.apply_button": "Применить",
+
+  "single_player_selection.open_world_button": "Открыть мир",
+  "single_player_selection.new_world_button": "Новый мир",
+
+  "create_new_world.level_name": "Создать",
+
+  "back_button": "Назад",
+
+  "world_old_version": "Слишком старая версия мира",
+  "world_new_version": "Слишком новая версия мира",
+  "world_load_error": "Ошибка при чтении мира"
+}

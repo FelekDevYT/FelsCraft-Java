@@ -1,0 +1,24 @@
+{
+  "this.language": "English",
+  "this.system_lang": "en_US",
+
+  "main_menu.single_player_button": "Single player",
+  "main_menu.settings_button": "Settings",
+  "main_menu.about_button": "About game",
+  "main_menu.quit_button": "Quit",
+
+  "settings.settings_label": "Settings",
+  "settings.language_label": "Language",
+  "settings.apply_button": "Apply",
+
+  "single_player_selection.open_world_button": "Open world",
+  "single_player_selection.new_world_button": "New world",
+
+  "create_new_world.level_name": "Create",
+
+  "back_button": "Back",
+
+  "world_old_version": "Very old version of world",
+  "world_new_version": "Very new version of world",
+  "world_load_error": "External error while loading world"
+}
