@@ -3,7 +3,7 @@
 ## TODO list for 1.0(can be edited)
 - [ ] Add modding
     - [x] basic mod structure
-    - [ ] adding blocks using modding
+    - [x] adding blocks using modding
     - [ ] event API
     - [ ] Documentation
     - [x] Inventory API

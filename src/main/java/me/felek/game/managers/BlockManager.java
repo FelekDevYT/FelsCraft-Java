@@ -25,6 +25,16 @@ public class BlockManager {
         blockTypes.put("dirt", new BlockType(new Color(59, 39, 23)));
     }
 
+    public static boolean registerBlock(String blockName, Color color) {
+        if (blockTypes.containsKey(blockName)) {
+            Logger.log(LogLevel.ERROR, "Failed to register block " + blockName);
+            return false;
+        }
+
+        blockTypes.put(blockName, new BlockType(color));
+        return true;
+    }
+
     public static String getBlockNameAsBlockType(BlockType blockType) {
         Set<String> entries =  blockTypes.keySet();
         for (String name : entries) {
