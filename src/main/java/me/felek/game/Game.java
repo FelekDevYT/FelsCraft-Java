@@ -16,7 +16,7 @@ import java.awt.event.ActionListener;
 public class Game {
     // COPYRIGHTS
     public static final String AUTHOR = "FelekDevYT";
-    public static final String VERSION = "0.6";
+    public static final String VERSION = "0.7";
     public static final String NAME = "FelsCraft";
     public static final String FULL_NAME = NAME + " " + VERSION;
 

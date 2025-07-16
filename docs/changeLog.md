@@ -13,6 +13,7 @@
 > - 0.7Dt
 
 ## Versions
+- 0.7A - added simple modding.
 - 0.6B - fixed critical error
 - 0.6A - changed block structure and settings up for modding. world version - 0.7
 - 0.5E - changed menus style, add background color for every menu, added somethink to [TODO](TODO.md)

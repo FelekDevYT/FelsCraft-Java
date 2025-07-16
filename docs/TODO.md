@@ -2,9 +2,10 @@
 
 ## TODO list for 1.0(can be edited)
 - [ ] Add modding
-    - [ ] basic modding structure
+    - [x] basic mod structure
     - [ ] adding blocks using modding
     - [ ] event API
+    - [ ] Documentation
 - [x] Basic structures
     - [x] Change block structure for "modding"
 - [ ] Core
