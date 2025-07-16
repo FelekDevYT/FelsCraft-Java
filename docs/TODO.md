@@ -6,6 +6,7 @@
     - [ ] adding blocks using modding
     - [ ] event API
     - [ ] Documentation
+    - [x] Inventory API
 - [x] Basic structures
     - [x] Change block structure for "modding"
 - [ ] Core

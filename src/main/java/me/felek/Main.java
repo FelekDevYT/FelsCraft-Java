@@ -24,7 +24,6 @@ public class Main extends JPanel{
         Logger.log(LogLevel.OK, "Language loaded.");
         ModManager.initModManager();
         ModManager.loadMods();
-        ModManager.setupAll();
         new MainMenu();
     }
 

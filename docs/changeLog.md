@@ -13,6 +13,7 @@
 > - 0.7Dt
 
 ## Versions
+- 0.7B - added inventory API, big changes in InventoryManager.java
 - 0.7A - added simple modding.
 - 0.6B - fixed critical error
 - 0.6A - changed block structure and settings up for modding. world version - 0.7

@@ -46,11 +46,11 @@ public class InventoryOverlay {
 
         int start = Game.SCREEN_WIDTH / 3;
 
-        drawBlockInInventory(g, start, (Game.SCREEN_HEIGHT + Game.INVENTORY_HEIGHT) - 90, InventoryManager.inventory[0]);
+        drawBlockInInventory(g, start, (Game.SCREEN_HEIGHT + Game.INVENTORY_HEIGHT) - 90, InventoryManager.getItemAtPos(0));
         for(int i = 1; i < 9; i++){
-            drawBlockInInventory(g,start + (InventoryManager.INVENTORY_BLOCK_SIZE * i), (Game.SCREEN_HEIGHT + Game.INVENTORY_HEIGHT) - 90, InventoryManager.inventory[i]);
+            drawBlockInInventory(g,start + (InventoryManager.INVENTORY_BLOCK_SIZE * i), (Game.SCREEN_HEIGHT + Game.INVENTORY_HEIGHT) - 90, InventoryManager.getItemAtPos(i));
         }
-        drawSelectedInventorySlot(g,start + (InventoryManager.INVENTORY_BLOCK_SIZE * InventoryManager.current_slot), (Game.SCREEN_HEIGHT + Game.INVENTORY_HEIGHT) - 90, InventoryManager.inventory[InventoryManager.current_slot]);
+        drawSelectedInventorySlot(g,start + (InventoryManager.INVENTORY_BLOCK_SIZE * InventoryManager.current_slot), (Game.SCREEN_HEIGHT + Game.INVENTORY_HEIGHT) - 90, InventoryManager.getItemAtPos(InventoryManager.current_slot));
 
         g.setColor(previous);
     }

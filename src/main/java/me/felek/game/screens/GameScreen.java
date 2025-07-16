@@ -7,6 +7,7 @@ import me.felek.game.listeners.KeyListener;
 import me.felek.game.listeners.MouseListener;
 import me.felek.game.listeners.MouseWheelListener;
 import me.felek.game.managers.InventoryManager;
+import me.felek.game.managers.ModManager;
 import me.felek.lib.logUtils.LogLevel;
 import me.felek.lib.logUtils.Logger;
 
@@ -24,6 +25,8 @@ public class GameScreen{
 
         Game.init(m);
         InventoryManager.init();
+
+        ModManager.setupAll();
 
         Logger.log(LogLevel.INFO, "Opening GUI.");
         frame.getContentPane().add(m);

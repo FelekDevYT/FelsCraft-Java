@@ -23,7 +23,7 @@ public class MouseListener implements java.awt.event.MouseListener {
             type = BlockManager.getBlockTypeAsName("sky");
         }
 
-        Game.world.blocks[cubeX][cubeY] = new Block(cubeX * Game.BLOCK_SIZE, cubeY * Game.BLOCK_SIZE, type == BlockManager.getBlockTypeAsName("sky")?type : InventoryManager.inventory[InventoryManager.current_slot]);
+        Game.world.blocks[cubeX][cubeY] = new Block(cubeX * Game.BLOCK_SIZE, cubeY * Game.BLOCK_SIZE, type == BlockManager.getBlockTypeAsName("sky")?type : InventoryManager.getItemAtPos(InventoryManager.current_slot));
     }
 
     @Override

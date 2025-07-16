@@ -6,7 +6,20 @@ public class InventoryManager {
     public static final int INVENTORY_BLOCK_SIZE = 40;
     public static int current_slot = 0;
 
-    public static BlockType[] inventory;
+    private static BlockType[] inventory;
+
+    public static void setItemInPos(int pos, BlockType type) {
+        inventory[pos] = type;
+    }
+
+    public static BlockType getItemAtPos(int pos) {
+        return inventory[pos];
+    }
+
+    public static void addItemToInventory(BlockType type) {
+        inventory[current_slot] = type;
+        current_slot++;
+    }
 
     public static void init() {
         inventory = new BlockType[9];
@@ -18,5 +31,6 @@ public class InventoryManager {
         for(int i = 5; i < 9;i++){
             inventory[i] = BlockManager.getBlockTypeAsName("sky");
         }
+        current_slot = 5;
     }
 }

@@ -2,6 +2,7 @@ package me.felek.game;
 
 import me.felek.Main;
 import me.felek.game.listeners.KeyListener;
+import me.felek.game.managers.ModManager;
 import me.felek.game.overlays.InventoryOverlay;
 import me.felek.game.processes.PhysicsProcess;
 import me.felek.game.processes.Process;
@@ -41,6 +42,7 @@ public class Game {
 
     //ANOTHER
     public static final Player player = new Player(0, 0);
+
     public static Main INSTANCE;
     public static Timer gameUpdater;
 

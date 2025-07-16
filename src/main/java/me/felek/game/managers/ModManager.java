@@ -2,11 +2,13 @@ package me.felek.game.managers;
 
 import me.felek.game.modding.Mod;
 import me.felek.game.modding.luaAPI.debugging.LogFunction;
+import me.felek.game.modding.luaAPI.inventory.AddItemFunction;
+import me.felek.game.modding.luaAPI.inventory.SetItemInSlot;
+import me.felek.game.modding.luaAPI.inventory.GetItemInSlot;
 import me.felek.lib.logUtils.LogLevel;
 import me.felek.lib.logUtils.Logger;
 import org.luaj.vm2.Globals;
 import org.luaj.vm2.LuaTable;
-import org.luaj.vm2.LuaValue;
 import org.luaj.vm2.lib.jse.JsePlatform;
 
 import java.io.File;
@@ -25,10 +27,16 @@ public class ModManager {
         LuaTable fc = new LuaTable();
 
         LuaTable debugging = new LuaTable();
+        LuaTable inventory = new LuaTable();
+
+        inventory.set("addItem", new AddItemFunction());
+        inventory.set("setItemInSlot", new SetItemInSlot());
+        inventory.set("getItemInSlot", new GetItemInSlot());
 
         debugging.set("log", new LogFunction());
 
         fc.set("debugging", debugging);
+        fc.set("inventory", inventory);
 
         GLOBALS.set("fc", fc);
     }
