@@ -653,7 +653,7 @@
 18 4 sky
 18 5 sky
 18 6 sky
-18 7 sky
+18 7 grass
 18 8 sky
 18 9 sky
 18 10 sky
@@ -689,7 +689,7 @@
 19 4 sky
 19 5 sky
 19 6 sky
-19 7 sky
+19 7 grass
 19 8 sky
 19 9 sky
 19 10 sky
@@ -1019,7 +1019,7 @@
 28 10 sky
 28 11 sky
 28 12 sky
-28 13 sky
+28 13 snow
 28 14 sky
 28 15 sky
 28 16 grass
@@ -1055,7 +1055,7 @@
 29 10 sky
 29 11 sky
 29 12 sky
-29 13 sky
+29 13 snow
 29 14 sky
 29 15 sky
 29 16 grass
@@ -1090,8 +1090,8 @@
 30 9 sky
 30 10 sky
 30 11 sky
-30 12 sky
-30 13 sky
+30 12 snow
+30 13 snow
 30 14 sky
 30 15 grass
 30 16 grass

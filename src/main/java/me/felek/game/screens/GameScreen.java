@@ -8,6 +8,7 @@ import me.felek.game.listeners.MouseListener;
 import me.felek.game.listeners.MouseWheelListener;
 import me.felek.game.managers.InventoryManager;
 import me.felek.game.managers.ModManager;
+import me.felek.game.modding.luaAPI.event.EventVal;
 import me.felek.lib.logUtils.LogLevel;
 import me.felek.lib.logUtils.Logger;
 
@@ -36,6 +37,9 @@ public class GameScreen{
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.addKeyListener(new KeyListener());
         frame.addMouseListener(new MouseListener());
+
+        frame.addMouseListener(new EventVal());
+
         frame.addMouseWheelListener(new MouseWheelListener());
         Logger.log(LogLevel.OK, "GUI opened, game has been started.");
 

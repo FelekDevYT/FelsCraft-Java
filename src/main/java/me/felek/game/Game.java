@@ -59,6 +59,8 @@ public class Game {
         gameUpdater = new Timer(FPS, new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                ModManager.updateAll();
+
                 for(Process p : processes){
                     p.process();
                 }

@@ -6,5 +6,7 @@ function setup()
 end
 
 function update()
-    -- TODO: some
+    if fc.event.mouse.isButtonDown("left") then
+        print(123)
+    end
 end

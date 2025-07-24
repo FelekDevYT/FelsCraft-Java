@@ -5,6 +5,10 @@
     - [x] basic mod structure
     - [x] adding blocks using modding
     - [ ] event API
+      - [x] Mouse events
+      - [ ] Keyboard events
+      - [ ] InGame events
+      - [ ] EventBus
     - [ ] Documentation
     - [x] Inventory API
 - [x] Basic structures
