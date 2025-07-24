@@ -13,6 +13,8 @@
 > - 0.7Dt
 
 ## Versions
+- 0.7E(Special) - changed git
+- 0.7E - EventAPI(Beta today) added support for keyboard events, changed event system to EventBus system
 - 0.7D - EventAPI(Alpha), today only mouse events :(
 - 0.7C - make own block using modding API
 - 0.7B - added inventory API, big changes in InventoryManager.java

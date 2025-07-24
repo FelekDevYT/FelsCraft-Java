@@ -6,9 +6,9 @@
     - [x] adding blocks using modding
     - [ ] event API
       - [x] Mouse events
-      - [ ] Keyboard events
+      - [x] Keyboard events
+      - [x] EventBus
       - [ ] InGame events
-      - [ ] EventBus
     - [ ] Documentation
     - [x] Inventory API
 - [x] Basic structures

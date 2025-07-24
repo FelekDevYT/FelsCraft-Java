@@ -1,4 +1,14 @@
 package me.felek.game.modding.luaAPI.event;
 
-public class EventSubscribeFucntion {
+import me.felek.game.modding.EventBus;
+import org.luaj.vm2.LuaValue;
+import org.luaj.vm2.lib.TwoArgFunction;
+
+public class EventSubscribeFunction extends TwoArgFunction {
+    @Override
+    public LuaValue call(LuaValue eventName, LuaValue eventFunction) {
+        EventBus.subscribe(eventName.checkjstring(), eventFunction.checkfunction());
+
+        return null;
+    }
 }

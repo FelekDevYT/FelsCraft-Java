@@ -3,7 +3,8 @@ package me.felek.game.managers;
 import me.felek.game.modding.Mod;
 import me.felek.game.modding.luaAPI.block.RegisterBlockFunction;
 import me.felek.game.modding.luaAPI.debugging.LogFunction;
-import me.felek.game.modding.luaAPI.event.mouse.IsButtonDown;
+import me.felek.game.modding.luaAPI.event.EventSubscribeFunction;
+import me.felek.game.modding.luaAPI.event.EventUnSubscribeFunction;
 import me.felek.game.modding.luaAPI.inventory.AddItemFunction;
 import me.felek.game.modding.luaAPI.inventory.SetItemInSlot;
 import me.felek.game.modding.luaAPI.inventory.GetItemInSlot;
@@ -33,11 +34,8 @@ public class ModManager {
         LuaTable block = new  LuaTable();
         LuaTable event = new LuaTable();
 
-        LuaTable mouse = new LuaTable();
-
-        mouse.set("isButtonDown", new IsButtonDown());
-
-        event.set("mouse", mouse);
+        event.set("subscribe", new EventSubscribeFunction());
+        event.set("unsubscribe", new EventUnSubscribeFunction());
 
         block.set("register", new RegisterBlockFunction());
 
