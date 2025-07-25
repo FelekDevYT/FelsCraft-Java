@@ -4,11 +4,13 @@
 - [ ] Add modding
     - [x] basic mod structure
     - [x] adding blocks using modding
-    - [ ] event API
+    - [ ] scheduler
+    - [x] event API
       - [x] Mouse events
       - [x] Keyboard events
+      - [x] Player events
       - [x] EventBus
-      - [ ] InGame events
+      - [x] InGame events
     - [ ] Documentation
     - [x] Inventory API
 - [x] Basic structures

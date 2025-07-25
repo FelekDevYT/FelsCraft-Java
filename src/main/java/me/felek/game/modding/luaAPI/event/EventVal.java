@@ -61,4 +61,8 @@ public class EventVal implements MouseListener, KeyListener {
     public static void callBlockBroken(String blockType, int posX, int posY) {
         EventBus.call("world.block_broken", blockType, posX, posY);
     }
+
+    public static void callPlayerMovedEvent(int oldX, int oldY, int dx, int dy) {
+        EventBus.call("player.moved", oldX, oldY, dx, dy);
+    }
 }

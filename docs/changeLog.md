@@ -13,6 +13,7 @@
 > - 0.7Dt
 
 ## Versions
+- 0.7G - 
 - 0.7F - fixed critical bug with game and mouse events
 - 0.7Ef(Special) - changed git
 - 0.7Ef - EventAPI(Beta today) added support for keyboard events, changed event system to EventBus system
