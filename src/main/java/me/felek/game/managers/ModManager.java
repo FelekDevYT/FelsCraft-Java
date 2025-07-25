@@ -8,6 +8,8 @@ import me.felek.game.modding.luaAPI.event.EventUnSubscribeFunction;
 import me.felek.game.modding.luaAPI.inventory.AddItemFunction;
 import me.felek.game.modding.luaAPI.inventory.SetItemInSlot;
 import me.felek.game.modding.luaAPI.inventory.GetItemInSlot;
+import me.felek.game.modding.luaAPI.player.GetCordsFunction;
+import me.felek.game.modding.luaAPI.player.SetCordsFunction;
 import me.felek.game.modding.luaAPI.scheduler.RunSchedulerFunction;
 import me.felek.game.modding.luaAPI.scheduler.SchedulerAPI;
 import me.felek.game.modding.luaAPI.scheduler.StopSchedulerFunction;
@@ -37,6 +39,10 @@ public class ModManager {
         LuaTable block = new  LuaTable();
         LuaTable event = new LuaTable();
         LuaTable schelude = new LuaTable();
+        LuaTable player = new LuaTable();
+
+        player.set("getCords", new GetCordsFunction());
+        player.set("setCords", new SetCordsFunction());
 
         schelude.set("run", new RunSchedulerFunction());
         schelude.set("stop", new StopSchedulerFunction());

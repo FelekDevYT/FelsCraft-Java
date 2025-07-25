@@ -15,6 +15,13 @@
       - [x] EventBus
       - [x] InGame events
     - [ ] Documentation
+    - [ ] structures in modding
+    - [ ] biomes in modding
+      - [ ] Player API
+        - [x] player.moved()
+        - [x] player.getCords()
+        - [x] player.setCords()
+        - [ ] player.moveToLevel()
     - [x] Inventory API
 - [x] Basic structures
     - [x] Change block structure for "modding"

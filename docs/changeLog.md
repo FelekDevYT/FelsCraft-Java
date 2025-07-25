@@ -13,6 +13,7 @@
 > - 0.7Dt
 
 ## Versions
+- 0.7I - player.getCords(), player.setCords()
 - 0.7H - added scheduler
 - 0.7G - added player events
 - 0.7F - fixed critical bug with game and mouse events
