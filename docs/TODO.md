@@ -5,6 +5,9 @@
     - [x] basic mod structure
     - [x] adding blocks using modding
     - [ ] scheduler
+      - [x] Run scheduler
+      - [x] Stop scheduler
+      - [ ] Resume scheduler
     - [x] event API
       - [x] Mouse events
       - [x] Keyboard events

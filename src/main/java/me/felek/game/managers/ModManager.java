@@ -8,6 +8,9 @@ import me.felek.game.modding.luaAPI.event.EventUnSubscribeFunction;
 import me.felek.game.modding.luaAPI.inventory.AddItemFunction;
 import me.felek.game.modding.luaAPI.inventory.SetItemInSlot;
 import me.felek.game.modding.luaAPI.inventory.GetItemInSlot;
+import me.felek.game.modding.luaAPI.scheduler.RunSchedulerFunction;
+import me.felek.game.modding.luaAPI.scheduler.SchedulerAPI;
+import me.felek.game.modding.luaAPI.scheduler.StopSchedulerFunction;
 import me.felek.lib.logUtils.LogLevel;
 import me.felek.lib.logUtils.Logger;
 import org.luaj.vm2.Globals;
@@ -33,6 +36,10 @@ public class ModManager {
         LuaTable inventory = new LuaTable();
         LuaTable block = new  LuaTable();
         LuaTable event = new LuaTable();
+        LuaTable schelude = new LuaTable();
+
+        schelude.set("run", new RunSchedulerFunction());
+        schelude.set("stop", new StopSchedulerFunction());
 
         event.set("subscribe", new EventSubscribeFunction());
         event.set("unsubscribe", new EventUnSubscribeFunction());
@@ -49,6 +56,7 @@ public class ModManager {
         fc.set("inventory", inventory);
         fc.set("block", block);
         fc.set("event", event);
+        fc.set("scheduler", schelude);
 
         GLOBALS.set("fc", fc);
     }
