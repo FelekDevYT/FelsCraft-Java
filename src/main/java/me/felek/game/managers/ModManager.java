@@ -15,6 +15,9 @@ import me.felek.game.modding.luaAPI.player.SetCurrentLevelFunction;
 import me.felek.game.modding.luaAPI.scheduler.RunSchedulerFunction;
 import me.felek.game.modding.luaAPI.scheduler.SchedulerAPI;
 import me.felek.game.modding.luaAPI.scheduler.StopSchedulerFunction;
+import me.felek.game.modding.luaAPI.world.GetBlockAtFunction;
+import me.felek.game.modding.luaAPI.world.SaveCurrentLevelFunction;
+import me.felek.game.modding.luaAPI.world.SetBlockAtFunction;
 import me.felek.lib.logUtils.LogLevel;
 import me.felek.lib.logUtils.Logger;
 import org.luaj.vm2.Globals;
@@ -42,6 +45,11 @@ public class ModManager {
         LuaTable event = new LuaTable();
         LuaTable schelude = new LuaTable();
         LuaTable player = new LuaTable();
+        LuaTable world = new LuaTable();
+
+        world.set("saveCurrentLevel", new SaveCurrentLevelFunction());
+        world.set("getBlockAt", new GetBlockAtFunction());
+        world.set("setBlockAt", new SetBlockAtFunction());
 
         player.set("getCords", new GetCordsFunction());
         player.set("setCords", new SetCordsFunction());
@@ -68,6 +76,7 @@ public class ModManager {
         fc.set("event", event);
         fc.set("scheduler", schelude);
         fc.set("player", player);
+        fc.set("world", world);
 
         GLOBALS.set("fc", fc);
     }

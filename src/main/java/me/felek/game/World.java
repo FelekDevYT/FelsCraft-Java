@@ -29,8 +29,8 @@ public class World {
         return blocks[x][y];
     }
 
-    public void setBlock(int x, int y, Block block) {
-        blocks[x][y] = block;
+    public void setBlock( Block block) {
+        blocks[block.getX()][block.getY()] = block;
     }
 
     /*

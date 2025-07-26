@@ -21,9 +21,9 @@
       - [x] player.moveToLevel()
       - [x] player.getLevel()
     - [ ] world
-      - [ ] world.saveCurrentLevel()
-      - [ ] world.setBlockAt()
-      - [ ] world.getBlockAt()
+      - [x] world.saveCurrentLevel()
+      - [x] world.setBlockAt()
+      - [x] world.getBlockAt()
     - [ ] Documentation
     - [ ] structures in modding
     - [ ] biomes in modding
