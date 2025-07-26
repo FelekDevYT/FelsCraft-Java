@@ -14,14 +14,19 @@
       - [x] Player events
       - [x] EventBus
       - [x] InGame events
+    - [x] Player API
+      - [x] player.moved()
+      - [x] player.getCords()
+      - [x] player.setCords()
+      - [x] player.moveToLevel()
+      - [x] player.getLevel()
+    - [ ] world
+      - [ ] world.saveCurrentLevel()
+      - [ ] world.setBlockAt()
+      - [ ] world.getBlockAt()
     - [ ] Documentation
     - [ ] structures in modding
     - [ ] biomes in modding
-      - [ ] Player API
-        - [x] player.moved()
-        - [x] player.getCords()
-        - [x] player.setCords()
-        - [ ] player.moveToLevel()
     - [x] Inventory API
 - [x] Basic structures
     - [x] Change block structure for "modding"

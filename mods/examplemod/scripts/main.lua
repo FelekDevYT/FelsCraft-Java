@@ -15,6 +15,8 @@ function setup()
     fc.event.subscribe("player.moved", playerMoved)
     
     fc.scheduler.run("name", scheduler, 1000)
+
+    print(fc.player.getCurrentLevel())
 end
 
 function scheduler()
