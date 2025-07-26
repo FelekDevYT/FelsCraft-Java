@@ -7,8 +7,10 @@
     - [ ] scheduler
       - [x] Run scheduler
       - [x] Stop scheduler
-      - [ ] Resume scheduler
-    - [x] event API
+      - [x] Resume scheduler
+      - [x] Pause scheduler
+      - [x] Restart scheduler
+     - [x] event API
       - [x] Mouse events
       - [x] Keyboard events
       - [x] Player events
@@ -20,7 +22,7 @@
       - [x] player.setCords()
       - [x] player.moveToLevel()
       - [x] player.getLevel()
-    - [ ] world
+    - [x] world
       - [x] world.saveCurrentLevel()
       - [x] world.setBlockAt()
       - [x] world.getBlockAt()

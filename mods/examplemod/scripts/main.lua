@@ -20,8 +20,9 @@ function setup()
 end
 
 function scheduler()
-    if (var == 10) then
-        fc.scheduler.stop("name")
+    if (var == 4) then
+        fc.scheduler.restart("name")
+        var = 0
     end
 
     var = var + 1

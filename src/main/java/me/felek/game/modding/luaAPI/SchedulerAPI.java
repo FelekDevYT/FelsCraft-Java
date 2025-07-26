@@ -1,4 +1,4 @@
-package me.felek.game.modding.luaAPI.scheduler;
+package me.felek.game.modding.luaAPI;
 
 import org.luaj.vm2.LuaFunction;
 
@@ -16,6 +16,18 @@ public class SchedulerAPI {
         timer.start();
 
         schedulers.put(schedulerName, timer);
+    }
+
+    public static void pauseScheduler(String schedulerName) {//old - stop scheduler
+        schedulers.get(schedulerName).stop();
+    }
+
+    public static void resumeScheduler(String schedulerName) {
+        schedulers.get(schedulerName).start();
+    }
+
+    public static void restartScheduler(String schedulerName) {
+        schedulers.get(schedulerName).restart();
     }
 
     public static void stopScheduler(String schedulerName) {

@@ -12,9 +12,7 @@ import me.felek.game.modding.luaAPI.player.GetCordsFunction;
 import me.felek.game.modding.luaAPI.player.GetCurrentLevelFunction;
 import me.felek.game.modding.luaAPI.player.SetCordsFunction;
 import me.felek.game.modding.luaAPI.player.SetCurrentLevelFunction;
-import me.felek.game.modding.luaAPI.scheduler.RunSchedulerFunction;
-import me.felek.game.modding.luaAPI.scheduler.SchedulerAPI;
-import me.felek.game.modding.luaAPI.scheduler.StopSchedulerFunction;
+import me.felek.game.modding.luaAPI.scheduler.*;
 import me.felek.game.modding.luaAPI.world.GetBlockAtFunction;
 import me.felek.game.modding.luaAPI.world.SaveCurrentLevelFunction;
 import me.felek.game.modding.luaAPI.world.SetBlockAtFunction;
@@ -57,7 +55,10 @@ public class ModManager {
         player.set("setCurrentLevel", new SetCurrentLevelFunction());
 
         schelude.set("run", new RunSchedulerFunction());
+        schelude.set("pause", new PauseSchedulerFunction());
         schelude.set("stop", new StopSchedulerFunction());
+        schelude.set("resume", new SchedulerResumeFunction());
+        schelude.set("restart", new RestartSchedulerFunction());
 
         event.set("subscribe", new EventSubscribeFunction());
         event.set("unsubscribe", new EventUnSubscribeFunction());
