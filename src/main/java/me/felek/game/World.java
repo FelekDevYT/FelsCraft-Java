@@ -10,7 +10,7 @@ import java.awt.*;
 import static me.felek.game.Game.*;
 
 public class World {
-    public static final String WORLD_VERSION = "0.7";
+    public static final String WORLD_VERSION = "0.8";
 
     public Block[][] blocks = new Block[GAME_WIDTH][GAME_HEIGHT];
     public int[] heights_level = new int[GAME_WIDTH];

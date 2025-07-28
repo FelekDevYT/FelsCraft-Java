@@ -4,13 +4,13 @@
 - [ ] Add modding
     - [x] basic mod structure
     - [x] adding blocks using modding
-    - [ ] scheduler
+    - [x] scheduler
       - [x] Run scheduler
       - [x] Stop scheduler
       - [x] Resume scheduler
       - [x] Pause scheduler
       - [x] Restart scheduler
-     - [x] event API
+    - [x] event API
       - [x] Mouse events
       - [x] Keyboard events
       - [x] Player events
@@ -26,12 +26,15 @@
       - [x] world.saveCurrentLevel()
       - [x] world.setBlockAt()
       - [x] world.getBlockAt()
+    - [ ] worldGen
+      - [ ] biomes generation
+      - [ ] ores generation
+      - [ ] structures generation
     - [ ] Documentation
-    - [ ] structures in modding
-    - [ ] biomes in modding
     - [x] Inventory API
 - [x] Basic structures
     - [x] Change block structure for "modding"
+    - [x] Change world data save format to more optimized format
 - [ ] Core
     - [x] Add blocks break/set using mouse(left and right button)
     - [x] Add inventory

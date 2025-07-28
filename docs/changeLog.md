@@ -13,6 +13,7 @@
 > - 0.7Dt
 
 ## Versions
+- 0.8A - changed world signature(world save version - 0.8)
 - 0.7L - scheduler.resume(), scheduler.restart(), scheduler.restart()
 - 0.7K - world API + some changes in changeLog
 - 0.7J - end of playerAPI development + fixed fc.player bug

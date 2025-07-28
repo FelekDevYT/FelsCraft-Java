@@ -6,7 +6,6 @@ import me.felek.lib.logUtils.Logger;
 
 import java.awt.*;
 import java.util.*;
-import java.util.List;
 
 public class BlockManager {
     public static Map<String, BlockType> blockTypes;
@@ -23,6 +22,32 @@ public class BlockManager {
         blockTypes.put("leaves", new BlockType(new Color(33, 224, 33)));
         blockTypes.put("log", new BlockType(new Color(99, 61, 31)));
         blockTypes.put("dirt", new BlockType(new Color(59, 39, 23)));
+    }
+
+    public static byte getBlockTypeIndex(String blockName) {
+        byte counter = 0;
+        for (String str: blockTypes.keySet()) {
+            if (str.equalsIgnoreCase(blockName)) {
+                return counter;
+            }
+
+            counter++;
+        }
+
+        return -1;
+    }
+
+    public static String getBlockNameFromIndex(int index) {
+        int counter = 0;
+        for (String str : blockTypes.keySet()) {
+            if (counter == index) {
+                return str;
+            }
+
+            counter++;
+        }
+
+        return null;
     }
 
     public static boolean registerBlock(String blockName, Color color) {

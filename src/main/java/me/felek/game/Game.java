@@ -1,13 +1,13 @@
 package me.felek.game;
 
 import me.felek.Main;
-import me.felek.game.listeners.KeyListener;
+import me.felek.game.managers.BlockManager;
 import me.felek.game.managers.ModManager;
 import me.felek.game.overlays.InventoryOverlay;
 import me.felek.game.processes.PhysicsProcess;
 import me.felek.game.processes.Process;
 import me.felek.game.processes.WorldProcess;
-import me.felek.lib.utils.MathUtils;
+import me.felek.game.worldgen.oregen.OreLevel;
 
 import javax.swing.*;
 import java.awt.*;
@@ -17,7 +17,7 @@ import java.awt.event.ActionListener;
 public class Game {
     // COPYRIGHTS
     public static final String AUTHOR = "FelekDevYT";
-    public static final String VERSION = "0.7";
+    public static final String VERSION = "0.8";
     public static final String NAME = "FelsCraft";
     public static final String FULL_NAME = NAME + " " + VERSION;
 

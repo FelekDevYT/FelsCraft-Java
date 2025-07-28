@@ -5,6 +5,7 @@ import me.felek.game.managers.LevelManager;
 import me.felek.game.utils.JSONParser;
 import me.felek.lib.logUtils.LogLevel;
 import me.felek.lib.logUtils.Logger;
+import org.luaj.vm2.ast.Str;
 
 import java.io.*;
 import java.nio.file.Files;
@@ -16,6 +17,9 @@ import java.util.List;
 Signature of level(version linked to world version):
 <blockX> <blockY> <blockTypeAsString>
  */
+/*
+GLOBAL OPTIMIZATION FROM 24645 TO 17432
+ */
 public class LevelSO {
     public static void saveLevel(String level) {
         Logger.log(LogLevel.INFO, "Saving level: " + String.format("worlds/%s/data/%s.fsw", Game.worldName, level));
@@ -23,7 +27,7 @@ public class LevelSO {
             for (int x = 0; x < Game.GAME_WIDTH; x++) {
                 for (int y = 0; y < Game.GAME_HEIGHT; y++) {
                     Block b = Game.world.getBlockAt(x, y);
-                    bw.write(String.format("%d %d %s\n", x, y, BlockManager.getBlockNameAsBlockType(b.getType())));
+                    bw.write(String.format("%d %d %d\n", x, y, BlockManager.getBlockTypeIndex(BlockManager.getBlockNameAsBlockType(b.getType()))));
                 }
             }
         } catch (IOException e) {
@@ -52,7 +56,7 @@ public class LevelSO {
                 String[] split = line.split(" ");
                 int x = Integer.parseInt(split[0]);
                 int y = Integer.parseInt(split[1]);
-                BlockType type = BlockManager.getBlockTypeAsName(split[2]);
+                BlockType type = BlockManager.getBlockTypeAsName(BlockManager.getBlockNameFromIndex((int) Byte.parseByte(split[2])));
 
                 if (x >= 0 && x < Game.GAME_WIDTH && y >= 0 && y < Game.GAME_HEIGHT) {
                     Game.world.blocks[x][y] = new Block(

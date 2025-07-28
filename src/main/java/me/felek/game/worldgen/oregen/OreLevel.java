@@ -1,4 +1,4 @@
-package me.felek.game;
+package me.felek.game.worldgen.oregen;
 
 import java.util.Random;
 
@@ -11,8 +11,10 @@ public class OreLevel {
     public OreLevel(int minY, int maxY, int[] rndLevel) {
         this.minY = minY;
         this.maxY = maxY;//F=F F=S(1,5)(1,3)
-        if(rndLevel.length == 4){
+        if (rndLevel.length == 4){
             this.rndLevel = rndLevel;
+        }else {
+           this.rndLevel = new int[]{1, 5, 1, 5};
         }
     }
 
