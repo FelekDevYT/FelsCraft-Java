@@ -40,6 +40,8 @@
     - [x] Add inventory
     - [x] On load new level player spawns on ground(not on air)
     - [ ] Add ESCAPE menu in game
+    - [ ] Transfer to RayLib
+    - [ ] Multiscreen game
 - [ ] World
     - [x] Player in world signature(player.json)
     - [x] Structure generation
