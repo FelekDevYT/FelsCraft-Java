@@ -28,8 +28,6 @@ public class Main extends JPanel{
     }
 
     public void paint(Graphics g){
-        super.paintComponents(g);
-
         Game.world.renderWorld(g);
 
         Game.overlay.draw(g);
