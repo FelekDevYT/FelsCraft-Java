@@ -13,6 +13,7 @@
 > - 0.7Dt
 
 ## Versions
+- 0.8D - safe mod library
 - 0.8C - fixed paintComponents() call in Main.java
 - 0.8B - fixed critical error in WorldProcess
 - 0.8A - changed world signature(world save version - 0.8)

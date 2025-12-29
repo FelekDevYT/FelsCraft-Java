@@ -20,6 +20,9 @@ import me.felek.lib.logUtils.LogLevel;
 import me.felek.lib.logUtils.Logger;
 import org.luaj.vm2.Globals;
 import org.luaj.vm2.LuaTable;
+import org.luaj.vm2.lib.PackageLib;
+import org.luaj.vm2.lib.jse.JseBaseLib;
+import org.luaj.vm2.lib.jse.JseMathLib;
 import org.luaj.vm2.lib.jse.JsePlatform;
 
 import java.io.File;
@@ -28,13 +31,17 @@ import java.util.List;
 import java.util.Objects;
 
 public class ModManager {
-    public static final Globals GLOBALS = JsePlatform.standardGlobals();
+    public static final Globals GLOBALS = new Globals();
 
     public static final int MAX_LOADED_MODS = 4;
 
     public static List<Mod> loadedMods = new ArrayList<>();
 
     public static void initModManager() {
+        GLOBALS.load(new JseBaseLib());
+        GLOBALS.load(new PackageLib());
+        GLOBALS.load(new JseMathLib());
+
         LuaTable fc = new LuaTable();
 
         LuaTable debugging = new LuaTable();
