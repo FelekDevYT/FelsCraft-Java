@@ -19,7 +19,9 @@ import me.felek.game.modding.luaAPI.world.SetBlockAtFunction;
 import me.felek.lib.logUtils.LogLevel;
 import me.felek.lib.logUtils.Logger;
 import org.luaj.vm2.Globals;
+import org.luaj.vm2.LoadState;
 import org.luaj.vm2.LuaTable;
+import org.luaj.vm2.compiler.LuaC;
 import org.luaj.vm2.lib.PackageLib;
 import org.luaj.vm2.lib.jse.JseBaseLib;
 import org.luaj.vm2.lib.jse.JseMathLib;
@@ -31,16 +33,13 @@ import java.util.List;
 import java.util.Objects;
 
 public class ModManager {
-    public static final Globals GLOBALS = new Globals();
+    public static final Globals GLOBALS = JsePlatform.standardGlobals();
 
     public static final int MAX_LOADED_MODS = 4;
 
     public static List<Mod> loadedMods = new ArrayList<>();
 
     public static void initModManager() {
-        GLOBALS.load(new JseBaseLib());
-        GLOBALS.load(new PackageLib());
-        GLOBALS.load(new JseMathLib());
 
         LuaTable fc = new LuaTable();
 
