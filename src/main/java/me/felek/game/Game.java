@@ -7,6 +7,7 @@ import me.felek.game.overlays.InventoryOverlay;
 import me.felek.game.processes.PhysicsProcess;
 import me.felek.game.processes.Process;
 import me.felek.game.processes.WorldProcess;
+import me.felek.game.screens.GameScreen;
 import me.felek.game.worldgen.oregen.OreLevel;
 
 import javax.swing.*;
@@ -64,7 +65,7 @@ public class Game {
                 for(Process p : processes){
                     p.process();
                 }
-                INSTANCE.redraw();
+                GameScreen.gamePanel.repaint();
             }
         });
         gameUpdater.start();

@@ -13,6 +13,7 @@
 > - 0.7Dt
 
 ## Versions
+- 0.8F - removed all bad things from Main file
 - 0.8E - fixed error while creating world
 - 0.8D - safe mod library
 - 0.8C - fixed paintComponents() call in Main.java

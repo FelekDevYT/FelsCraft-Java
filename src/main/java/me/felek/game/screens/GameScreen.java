@@ -13,24 +13,39 @@ import me.felek.lib.logUtils.LogLevel;
 import me.felek.lib.logUtils.Logger;
 
 import javax.swing.*;
+import java.awt.*;
 
 public class GameScreen{
     private JFrame frame = new JFrame();
+    public static JPanel gamePanel = new JPanel() {// so bad, but not in Main.java lol :)
+        public void paint(Graphics g){
+            Game.world.renderWorld(g);
+
+            Game.overlay.draw(g);
+
+            g.setColor(Color.WHITE);
+            g.setFont(new Font("Arial", Font.BOLD, 15));
+            g.drawString("@by " + Game.AUTHOR, 1140,670);
+            g.drawString(Game.FULL_NAME, 10, 15);
+        }
+
+        public void redraw(){
+            repaint();
+        }
+    };
 
     public GameScreen() {
         Logger.log(LogLevel.INFO, "Opening world.");
         LevelSO.loadLevel("level0");
         Logger.log(LogLevel.OK, "World successfully loaded.");
 
-        Main m = new Main();
-
-        Game.init(m);
+        Game.init(new Main());
         InventoryManager.init();
 
         ModManager.setupAll();
 
         Logger.log(LogLevel.INFO, "Opening GUI.");
-        frame.getContentPane().add(m);
+        frame.getContentPane().add(gamePanel);
         frame.setTitle(Game.FULL_NAME);
         frame.setSize(Game.SCREEN_WIDTH - 3, (Game.SCREEN_HEIGHT + Game.INVENTORY_HEIGHT));
         frame.setResizable(false);
