@@ -3,6 +3,7 @@ package me.felek;
 import me.felek.game.Game;
 import me.felek.game.lang.LangHandler;
 import me.felek.game.lang.Language;
+import me.felek.game.managers.LevelManager;
 import me.felek.game.managers.ModManager;
 import me.felek.game.screens.MainMenu;
 import me.felek.lib.logUtils.LogLevel;
@@ -19,6 +20,8 @@ public class Main extends JPanel{
     }
 
     public static void main(String[] args) {
+        LevelManager.createWorldsFolder();
+
         Logger.log(LogLevel.INFO, "Setting up language.");
         LangHandler.loadLanguage(Language.en_US);
         Logger.log(LogLevel.OK, "Language loaded.");
