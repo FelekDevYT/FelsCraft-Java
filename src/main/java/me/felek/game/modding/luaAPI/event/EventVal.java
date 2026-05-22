@@ -45,7 +45,7 @@ public class EventVal {
         int y = GetMouseY();
 
         int cubeX = x / Game.BLOCK_SIZE;
-        int cubeY = y / Game.BLOCK_SIZE - 1;
+        int cubeY = y / Game.BLOCK_SIZE ;
 
         if (cubeX < 0 || cubeX >= Game.world.blocks.length ||
                 cubeY < 0 || cubeY >= Game.world.blocks[0].length) {
