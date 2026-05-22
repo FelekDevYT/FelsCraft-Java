@@ -85,9 +85,17 @@ public class NewWorldScreen {
             Game.worldName = levelNameField.getText();
             Game.world.generateBlocks();
             LevelSO.saveLevel("level0");
-            new GameScreen();
 
             frame.dispose();
+
+            new Thread(() -> {//NEW
+                Game.gameRScreen.init();
+
+                while (Game.gameRScreen.check()) {
+                    Game.gameRScreen.update();
+                }
+                Game.gameRScreen.close();
+            }).start();
         });
         return createGameButton;
     }

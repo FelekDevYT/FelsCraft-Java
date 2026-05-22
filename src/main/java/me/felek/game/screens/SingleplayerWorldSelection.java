@@ -17,6 +17,8 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.Objects;
 
+import static com.raylib.Raylib.*;
+
 public class SingleplayerWorldSelection {
     public  SingleplayerWorldSelection() {
         Logger.log(LogLevel.INFO, "Opening GUI.");
@@ -96,8 +98,17 @@ public class SingleplayerWorldSelection {
 
             Logger.log(LogLevel.INFO, "Loading world...");
             Logger.log(LogLevel.INFO, "Moving screen to world.");
-            new GameScreen();
+
             frame.dispose();
+
+            new Thread(() -> {//NEW
+                Game.gameRScreen.init();
+
+                while (Game.gameRScreen.check()) {
+                    Game.gameRScreen.update();
+                }
+                Game.gameRScreen.close();
+            }).start();
         });
         return openWorld;
     }

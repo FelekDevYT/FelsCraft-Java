@@ -1,11 +1,10 @@
 package me.felek.game.modding.luaAPI.block;
 
 import me.felek.game.managers.BlockManager;
+import me.felek.game.utils.drawUtils.Color;
 import org.luaj.vm2.LuaTable;
 import org.luaj.vm2.LuaValue;
 import org.luaj.vm2.lib.TwoArgFunction;
-
-import java.awt.*;
 
 public class RegisterBlockFunction extends TwoArgFunction {
     @Override

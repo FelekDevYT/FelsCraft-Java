@@ -13,9 +13,9 @@ public class Player {
         this.y = y;
     }
 
-    public void draw(Graphics g) {
+    public void draw() {
         Block p = new Block((Game.BLOCK_SIZE * x), (Game.BLOCK_SIZE * y), BlockManager.getBlockTypeAsName("player"));
-        p.draw(g);
+        p.draw();
     }
 
     public void move(int dx, int dy) {

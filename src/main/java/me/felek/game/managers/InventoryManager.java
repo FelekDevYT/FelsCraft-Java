@@ -16,6 +16,22 @@ public class InventoryManager {
         return inventory[pos];
     }
 
+    public static void scroll(boolean left) {
+        if (left) {
+            if (current_slot == 0) {
+                current_slot = 8;
+            } else {
+                current_slot--;
+            }
+        } else {
+            if (current_slot == 8) {
+                current_slot = 0;
+            } else  {
+                current_slot++;
+            }
+        }
+    }
+
     public static void addItemToInventory(BlockType type) {
         inventory[current_slot] = type;
         current_slot++;

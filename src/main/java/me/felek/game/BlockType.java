@@ -1,6 +1,6 @@
 package me.felek.game;
 
-import java.awt.*;
+import me.felek.game.utils.drawUtils.Color;
 
 public class BlockType {
     private Color color = new Color(0, 0, 0);

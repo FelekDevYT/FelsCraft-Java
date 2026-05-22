@@ -19,9 +19,9 @@ public class GameScreen{
     private JFrame frame = new JFrame();
     public static JPanel gamePanel = new JPanel() {// so bad, but not in Main.java lol :)
         public void paint(Graphics g){
-            Game.world.renderWorld(g);
+            Game.world.renderWorld();
 
-            Game.overlay.draw(g);
+//            Game.overlay.draw(g);
 
             g.setColor(Color.WHITE);
             g.setFont(new Font("Arial", Font.BOLD, 15));
@@ -50,12 +50,12 @@ public class GameScreen{
         frame.setSize(Game.SCREEN_WIDTH - 3, (Game.SCREEN_HEIGHT + Game.INVENTORY_HEIGHT));
         frame.setResizable(false);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.addKeyListener(new KeyListener());
-        frame.addMouseListener(new MouseListener());
+        frame.addKeyListener(new KeyListener());//port this stuff
+        frame.addMouseListener(new MouseListener());//and this also
 
-        frame.addMouseListener(new EventVal());
+//        frame.addMouseListener(new EventVal());//and this lol
 
-        frame.addMouseWheelListener(new MouseWheelListener());
+        frame.addMouseWheelListener(new MouseWheelListener());//this!
         Logger.log(LogLevel.OK, "GUI opened, game has been started.");
 
         frame.setVisible(true);

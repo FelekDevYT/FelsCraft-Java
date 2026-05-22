@@ -93,13 +93,13 @@ public class World {
         }
     }
 
-    public void renderWorld(Graphics g) {
+    public void renderWorld() {
         for (int x = 0; x < GAME_WIDTH; x++) {
             for (int y = 0; y < GAME_HEIGHT; y++) {
-                blocks[x][y].draw(g);
+                blocks[x][y].draw();
             }
         }
 
-        player.draw(g);
+        player.draw();
     }
 }

@@ -1,5 +1,9 @@
 package me.felek.game;
 
+import me.felek.game.utils.drawUtils.Color;
+import me.felek.game.utils.drawUtils.Colors;
+import me.felek.game.utils.drawUtils.DrawTool;
+
 import java.awt.*;
 
 public class Block {
@@ -33,12 +37,14 @@ public class Block {
         return type;
     }
 
-    public void draw(Graphics graphics){
-        Color prev = graphics.getColor();
-        graphics.setColor(type.getColor());
-        graphics.fillRect(x, y, Game.BLOCK_SIZE, Game.BLOCK_SIZE);
-        graphics.setColor(Color.BLACK);
-        graphics.drawRect(x, y, Game.BLOCK_SIZE, Game.BLOCK_SIZE);
-        graphics.setColor(prev);
+    public void draw(){
+//        Color prev = graphics.getColor();
+//        graphics.setColor(type.getColor());
+//        graphics.fillRect(x, y, Game.BLOCK_SIZE, Game.BLOCK_SIZE);
+//        graphics.setColor(Color.BLACK);
+//        graphics.drawRect(x, y, Game.BLOCK_SIZE, Game.BLOCK_SIZE);
+//        graphics.setColor(prev);
+        DrawTool.drawFilledRectangle(type.getColor().getColor(), x, y, Game.BLOCK_SIZE, Game.BLOCK_SIZE);
+        DrawTool.drawRect(Colors.BLACK.getColor(), x, y, Game.BLOCK_SIZE, Game.BLOCK_SIZE);
     }
 }

@@ -1,10 +1,11 @@
 package me.felek.game.managers;
 
 import me.felek.game.BlockType;
+import me.felek.game.utils.drawUtils.Color;
+import me.felek.game.utils.drawUtils.Colors;
 import me.felek.lib.logUtils.LogLevel;
 import me.felek.lib.logUtils.Logger;
 
-import java.awt.*;
 import java.util.*;
 
 public class BlockManager {
@@ -18,7 +19,7 @@ public class BlockManager {
         blockTypes.put("iron", new BlockType(new Color(117, 111, 102)));
         blockTypes.put("coal", new BlockType(new Color(60, 60, 60)));
         blockTypes.put("diamond", new BlockType(new Color(11, 135, 150)));
-        blockTypes.put("player", new BlockType(Color.ORANGE));
+        blockTypes.put("player", new BlockType(Colors.ORANGE));
         blockTypes.put("leaves", new BlockType(new Color(33, 224, 33)));
         blockTypes.put("log", new BlockType(new Color(99, 61, 31)));
         blockTypes.put("dirt", new BlockType(new Color(59, 39, 23)));

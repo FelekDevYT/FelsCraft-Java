@@ -3,11 +3,14 @@ package me.felek.game;
 import me.felek.Main;
 import me.felek.game.managers.BlockManager;
 import me.felek.game.managers.ModManager;
+import me.felek.game.managers.ProcessManager;
 import me.felek.game.overlays.InventoryOverlay;
 import me.felek.game.processes.PhysicsProcess;
 import me.felek.game.processes.Process;
 import me.felek.game.processes.WorldProcess;
+import me.felek.game.screens.GameRScreen;
 import me.felek.game.screens.GameScreen;
+import me.felek.game.utils.drawUtils.Colors;
 import me.felek.game.worldgen.oregen.OreLevel;
 
 import javax.swing.*;
@@ -29,11 +32,11 @@ public class Game {
     public static final int SCREEN_WIDTH = 1280;//it is count of screen size
     public static final int SCREEN_HEIGHT = 720;
     public static final int FPS = 10;
-    public static final Process[] processes = new Process[2];
+    public static final ProcessManager processesManager = new ProcessManager();
 
     //INVENTORY
     public static final int INVENTORY_HEIGHT = 100;
-    public static final InventoryOverlay overlay = new InventoryOverlay(0, SCREEN_HEIGHT, Color.BLACK);
+    public static final InventoryOverlay overlay = new InventoryOverlay(Colors.BLACK);
 
     // GENERATION VARS
     public static final OreLevel ironLevel = new OreLevel(5, 17, new int[]{1, 14, 5, 14});
@@ -51,20 +54,22 @@ public class Game {
     public static String worldName;
     public static String worldVersion;
 
+    //TODO: should be private or local, but for Beta ok
+    public static GameRScreen gameRScreen = new GameRScreen();
+
     public static void init(Main m) {
         INSTANCE = m;
 
-        processes[0] = new WorldProcess();
-        processes[1] = new PhysicsProcess();
+        processesManager.registerProcess(new WorldProcess());
+        processesManager.registerProcess(new PhysicsProcess());
 
         gameUpdater = new Timer(FPS, new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                ModManager.updateAll();
+                ModManager.updateAll();//update stuff
 
-                for(Process p : processes){
-                    p.process();
-                }
+                processesManager.updateAll();
+
                 GameScreen.gamePanel.repaint();
             }
         });
